@@ -1,0 +1,46 @@
+{
+  "name": "firebase-sdk-with-netlify-functions",
+  "version": "1.0.0",
+  "description": "use Firebase Admin with Netlify lambda functions… free",
+  "private": true,
+  "main": "index.cjs.js",
+  "module": "index.js",
+  "homepage": "https://github.com/apotox/firebase-sdk-with-netlify-functions",
+  "scripts": {
+   
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pushi":"git add . && git commit -m 'e' && git push origin master",
+
+
+    "start": "concurrently 'yarn start:client' 'yarn start:server'",
+    "start:client": "webpack-dev-server --mode development --hot --config webpack.client.js",
+    "start:server": "netlify-lambda serve src/lambda -c webpack.server.js",
+    "build": "yarn build:client && yarn build:server && cd dist/server/ && yarn install",
+    "build:client": "webpack --mode production --config webpack.client.js",
+    "build:server": "netlify-lambda build src/lambda -c webpack.server.js"
+
+
+  },
+  "author": "apotox @saphidev",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "concurrently": "^3.5.1",
+    "dotenv": "^5.0.1",
+    "extract-loader": "^2.0.1",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "markdown-magic": "^0.1.25",
+    "netlify-lambda": "^0.4.0",
+    "node-fetch": "^2.1.2",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "firebase-admin": "^7.4.0",
+    "generate-json-webpack-plugin": "^0.3.1",
+    "lodash": "^4.17.11"
+  }
+}
