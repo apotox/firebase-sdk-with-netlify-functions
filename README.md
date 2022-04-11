@@ -10,4 +10,4 @@ this is the most important part, bundling a Nodejs Function for Netlify function
 so after the “yarn build: server” I change the directory by the command “cd dist/server/” and then “yarn install”,
 this will create a new node_modules into the lambda folder and netlify will zip it using zip-it-and-ship-it to AWS lambda function.
 
-[full story on medium](https://medium.com/@saphidev/use-firebase-admin-with-netlify-lambda-functions-free-483d3b390e3a)
+[full story](https://safi-eddine-posts.herokuapp.com/2019-05-24_use-Firebase-Admin-with-Netlify-lambda-functions-483d3b390e3a.html)
